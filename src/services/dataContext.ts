@@ -3,8 +3,8 @@ import type { AxiosResponse, AxiosError } from 'axios';
 import { offlineStore } from './offlineStore';
 
 // Base API URL configuration
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://storeapi-tarshoubylab.el-dokan.com';
-const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3N0b3JlYXBpLXRhcnNob3VieWxhYi5lbC1kb2thbi5jb20vYXBpL2FkbWluL2F1dGgiLCJpYXQiOjE3NDQzNTU3ODUsImV4cCI6Mzc3NDQzNTU3ODUsIm5iZiI6MTc0NDM1NTc4NSwianRpIjoic2dyQTFacTA2U29JcTNPQyIsInN1YiI6MTExMTQzNiwicHJ2IjoiNGFjMDVjMGY4YWMwOGYzNjRjYjRkMDNmYjhlMWY2MzFmZWMzMjJlOCJ9.FlVPNqbpb19s-06GUuG1N87ScAAaSPkTKgCOPcO8G_Y"
+// const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://storeapi-tarshoubylab.el-dokan.com';
+// const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3N0b3JlYXBpLXRhcnNob3VieWxhYi5lbC1kb2thbi5jb20vYXBpL2FkbWluL2F1dGgiLCJpYXQiOjE3NDQzNTU3ODUsImV4cCI6Mzc3NDQzNTU3ODUsIm5iZiI6MTc0NDM1NTc4NSwianRpIjoic2dyQTFacTA2U29JcTNPQyIsInN1YiI6MTExMTQzNiwicHJ2IjoiNGFjMDVjMGY4YWMwOGYzNjRjYjRkMDNmYjhlMWY2MzFmZWMzMjJlOCJ9.FlVPNqbpb19s-06GUuG1N87ScAAaSPkTKgCOPcO8G_Y"
 // Generic interface for API response
 interface ApiResponse<T> {
   data: T;
@@ -22,15 +22,15 @@ interface ApiError {
 // Generic data service class
 export class DataService {
   private static instance: DataService;
-  private baseURL: string;
+  // private baseURL: string;
   private isOnline: boolean;
   private syncInProgress = false;
   private processedRequestIds = new Set<number>();
 
   private constructor() {
-    this.baseURL = API_BASE_URL;
+    // this.baseURL = API_BASE_URL;
     this.isOnline = navigator.onLine;
-    axios.defaults.baseURL = this.baseURL;
+    // axios.defaults.baseURL = this.baseURL;
     axios.defaults.headers.common['Content-Type'] = 'application/json';
     // this.setAuthToken(token);
 
