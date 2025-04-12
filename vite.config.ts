@@ -3,7 +3,7 @@ import vue from '@vitejs/plugin-vue'
 import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig({
-  base: process.env.NODE_ENV === 'production' ? '/malyka-frontend/' : '/',
+  base: process.env.NODE_ENV === 'production' ? '/att-repo/' : '/',
   plugins: [
     vue(),
     VitePWA({
